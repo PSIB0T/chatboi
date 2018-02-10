@@ -4,6 +4,7 @@ A chat application using [React Native](https://facebook.github.io/react-native/
 
 # Prerequisites
   - You'd need to activate the [ChatBoi_server](https://github.com/PSIB0T/chatboi-server) first
+  - Rename config.example.js to config.js
   - Add your ChatBoi_server host configurations inside config.js (Add your wlan ip instead of localhost)
 
 Install the dependencies
