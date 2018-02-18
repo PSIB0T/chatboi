@@ -6,8 +6,9 @@
 
 import React, { Component } from 'react';
 import { ApolloProvider } from 'react-apollo';
-import { client } from './redux/store';
-import RootStack from './routes/navigator';
+import { Provider } from 'react-redux';
+import { client, store } from './redux/store';
+import Root from './components/Root.component';
 
 export default class App extends Component {
   componentWillMount() {
@@ -17,7 +18,9 @@ export default class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <RootStack />
+        <Provider store={store}>
+          <Root />
+        </Provider>
       </ApolloProvider>
 
     );
