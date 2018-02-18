@@ -2,39 +2,21 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
     Text,
-    View,
-    Button
+    View
   } from 'react-native';
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
 
 
-class Hello extends Component {
+class Details extends Component {
     static navigationOptions = {
-        title: 'Home'
-    }
-
-    renderData({ data }) {
-        console.log(data);
-        let response = 'Loading';
-        if (!data.loading) {
-            response = data.hello;
-        }
-        return response;
+        title: 'Details'
     }
 
     render() {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    {this.renderData(this.props)}
+                    {'Hello World gg'}
                 </Text>
-                <Button 
-                    title="Details"
-                    onPress={() => {
-                        this.props.navigation.navigate('Details');
-                    }}
-                />
             </View>
         );
     }
@@ -58,10 +40,5 @@ const styles = StyleSheet.create({
     },
   });
   
-const query = gql`
-    {
-        hello
-    }
-`;
   
-export default graphql(query)(Hello);
+export default Details;
